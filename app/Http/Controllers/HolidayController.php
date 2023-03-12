@@ -40,9 +40,11 @@ class HolidayController extends Controller
      */
     public function store(Request $request)
     {
+        // Split Date into single values for inserting into date
         $date = explode('-', $request->holidayDate);
         $holiday = new Holiday([
             'name' => htmlentities($request->holidayName),
+
             'date' => [
                 'd' => $date[0],
                 'm' => $date[1],
@@ -84,7 +86,10 @@ class HolidayController extends Controller
      */
     public function update(Request $request, Holiday $holiday): RedirectResponse
     {
+        // Update Holiday Name
         $holiday->name = $request->holidayName;
+
+        // Split Date into single values and update them in date
         $date = explode('-', $request->holidayDate);
         $holiday->date = [
             'd' => $date[0],

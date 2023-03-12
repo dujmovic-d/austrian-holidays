@@ -1,6 +1,7 @@
 @extends('components.layout')
 
 @section('content')
+<!-- Create Form for sending new holiday to Store Method and creating the Holiday -->
     <form action="{{ route('holidays.store') }}" method="POST">
         @csrf
         <div class="row text-center">
