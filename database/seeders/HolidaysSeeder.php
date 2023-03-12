@@ -18,9 +18,9 @@ class HolidaysSeeder extends Seeder
     public function run()
     {
         $holidays = [
-            ['name' => 'Allerheiligen', 'date' => json_encode(['d' => 1, 'm' => 11,'y'=>2023])],
-            ['name' => 'Weihnachten', 'date' => json_encode(['d' => 25, 'm' => 12,'y'=>2023])],
-            ['name' => 'Heilige Drei Könige', 'date' => json_encode(['d' => 6, 'm' => 1,'y'=>2023])]
+            ['name' => 'Allerheiligen', 'date' => json_encode(['y'=>'2023', 'm' => '11','d' => '01'])],
+            ['name' => 'Weihnachten', 'date' => json_encode(['y'=>'2023', 'm' => '12','d' => '25'])],
+            ['name' => 'Heilige Drei Könige', 'date' => json_encode(['y'=>'2023', 'm' => '01','d' => '06'])]
         ];
         Holiday::insert($holidays);
     }

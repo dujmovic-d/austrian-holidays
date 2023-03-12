@@ -18,10 +18,10 @@
                     <!-- Show name of holiday -->
                     <td>{{ $holiday->name }}</td>
                     <!-- Concatenate Date from fields -->
-                    <td>{{ implode('.', $holiday->date) }}</td>
+                    <td>{{ implode('.', array_reverse($holiday->date)) }}</td>
                     <td>
                         <!-- Create a button which routes to Edit Function in Controller with selected holiday id as value -->
-                        <form action="{{ route('holidays.edit', $holiday) }}" method="POST">
+                        <form action="{{ route('holidays.edit', $holiday) }}">
                             @csrf
                             <button type="submit"> Edit Holiday
                             </button>

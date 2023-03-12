@@ -44,9 +44,9 @@ class HolidayController extends Controller
         $holiday = new Holiday([
             'name' => htmlentities($request->holidayName),
             'date' => [
-                'd' => $date[2],
+                'd' => $date[0],
                 'm' => $date[1],
-                'y' => $date[0]
+                'y' => $date[2]
             ]
         ]);
         $holiday->save();
@@ -72,7 +72,7 @@ class HolidayController extends Controller
      */
     public function edit(Holiday $holiday)
     {
-        return view('holidays.edit', $holiday);
+        return view('holidays.edit', ['holiday' => $holiday]);
     }
 
     /**
@@ -82,9 +82,18 @@ class HolidayController extends Controller
      * @param  \App\Models\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Holiday $holiday)
+    public function update(Request $request, Holiday $holiday): RedirectResponse
     {
-        //
+        $holiday->name = $request->holidayName;
+        $date = explode('-', $request->holidayDate);
+        $holiday->date = [
+            'd' => $date[0],
+            'm' => $date[1],
+            'y' => $date[2]
+        ];
+        $holiday->save();
+
+        return redirect(route('holidays.index'));
     }
 
     /**

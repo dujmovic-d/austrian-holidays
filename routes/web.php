@@ -19,4 +19,3 @@ Route::get('/', function () {
 });
 
 Route::resource('holidays',HolidayController::class);
-// Route::delete('holidays/{holiday}','HolidayController@destroy');
