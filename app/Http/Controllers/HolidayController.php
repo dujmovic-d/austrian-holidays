@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Holiday;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class HolidayController extends Controller
@@ -14,7 +15,10 @@ class HolidayController extends Controller
      */
     public function index()
     {
-        return view('holidays.index');
+        $holidays = Holiday::all();
+        return view('holidays.index', [
+            'holidays' => $holidays
+        ]);
         //
     }
 
@@ -25,7 +29,7 @@ class HolidayController extends Controller
      */
     public function create()
     {
-        //
+        return view('holidays.create');
     }
 
     /**
@@ -36,7 +40,17 @@ class HolidayController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $date = explode('-', $request->holidayDate);
+        $holiday = new Holiday([
+            'name' => htmlentities($request->holidayName),
+            'date' => [
+                'd' => $date[2],
+                'm' => $date[1],
+                'y' => $date[0]
+            ]
+        ]);
+        $holiday->save();
+        return redirect(route('holidays.index'));
     }
 
     /**
@@ -58,7 +72,7 @@ class HolidayController extends Controller
      */
     public function edit(Holiday $holiday)
     {
-        //
+        return view('holidays.edit', $holiday);
     }
 
     /**
@@ -79,8 +93,9 @@ class HolidayController extends Controller
      * @param  \App\Models\Holiday  $holiday
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Holiday $holiday)
+    public function destroy(Holiday $holiday): RedirectResponse
     {
-        //
+        $holiday->delete();
+        return redirect(route('holidays.index'));
     }
 }

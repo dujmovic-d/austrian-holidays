@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('holidays', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->jsonb('date');
+            $table->json('date');
         });
     }
 
