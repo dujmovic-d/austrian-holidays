@@ -13,7 +13,7 @@ class Holiday extends Model
     // Cast Date from JSON into Array when retrieving from Database
     // Also cast from Array back into JSON String when saving into Database
     protected $casts = [
-        'date'=>'array',
+        'date'=>'datetime:Y-m-d',
     ];
     public $timestamps = false;
 }

@@ -17,8 +17,8 @@
                 <tr>
                     <!-- Show name of holiday -->
                     <td>{{ $holiday->name }}</td>
-                    <!-- Concatenate Date from fields -->
-                    <td>{{ implode('.', array_reverse($holiday->date)) }}</td>
+                    <!-- Format Date to European Format -->
+                    <td>{{ date_format($holiday->date,'d.m.Y') }}</td>
                     <td class="col-3">
                         <!-- Create a button which routes to Edit Function in Controller with selected holiday id as value -->
                         <form action="{{ route('holidays.edit', $holiday) }}">

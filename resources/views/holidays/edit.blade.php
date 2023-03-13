@@ -22,7 +22,7 @@
                         </div>
                         <!-- Prefill Holiday Date -->
                         <input type="date" required name="holidayDate"
-                            value="{{ old('holidayDate', implode('-', $holiday->date)) }}">
+                            value="{{ old('holidayDate', date_format($holiday->date,'Y-m-d')) }}">
                     </div>
                     <div class="row text-center mb-2">
                         <button class="btn btn-dark btn-outline-secondary text-white" type="submit">Save Holiday</button>
