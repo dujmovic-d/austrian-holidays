@@ -11,10 +11,10 @@
         @include('components.header')
     </header>
         @yield('content')
+        <footer>
+            @include('components.footer')
+        </footer>
     </div>
-    <footer>
-        @include('components.footer')
-    </footer>
 </body>
 
 </html>

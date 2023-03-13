@@ -1,3 +1,3 @@
-<div>
-    <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
+<div class="fs-6">
+    2023 &copy; Deniel Dujmovic 
 </div>

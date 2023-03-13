@@ -8,7 +8,7 @@
             <th scope="col" colspan="2" class="text-center">
                 <!-- Routes to Create Function in Controller which shows Holiday Creation Form -->
                 <form action="{{ route('holidays.create') }}">
-                    <button class="col-12" type="submit">Create new Holiday</button>
+                    <button class="col-12 btn btn-dark btn-outline-secondary text-white" type="submit">Create new Holiday</button>
                 </form>
             </th>
         </thead>
@@ -19,20 +19,20 @@
                     <td>{{ $holiday->name }}</td>
                     <!-- Concatenate Date from fields -->
                     <td>{{ implode('.', array_reverse($holiday->date)) }}</td>
-                    <td>
+                    <td class="col-3">
                         <!-- Create a button which routes to Edit Function in Controller with selected holiday id as value -->
                         <form action="{{ route('holidays.edit', $holiday) }}">
                             @csrf
-                            <button type="submit"> Edit Holiday
+                            <button class="col-12 btn btn-dark" type="submit"> Edit Holiday
                             </button>
                         </form>
                     </td>
-                    <td class="text-end">
+                    <td class="text-end col-3">
                         <!-- Create a button which routes to Destroy Function in Controller with selected holiday id as value -->
                         <form action="{{ route('holidays.destroy', $holiday) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit"> Delete Holiday</button>
+                            <button class="col-12 btn btn-dark" type="submit"> Delete Holiday</button>
                         </form>
                     </td>
 
