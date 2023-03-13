@@ -10,8 +10,8 @@ class Holiday extends Model
     use HasFactory;
     // Allow Mass Filling of Holidays in Database
     protected $fillable = ['name','date'];
-    // Cast Date from JSON into Array when retrieving from Database
-    // Also cast from Array back into JSON String when saving into Database
+    // Cast Date into DateTime Object when retrieving from Database
+    // Also cast from DateTIme Object back into Date when saving into Database
     protected $casts = [
         'date'=>'datetime:Y-m-d',
     ];
