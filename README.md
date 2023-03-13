@@ -6,12 +6,12 @@ This is a simple Project for learning how to create a CRUD Web Application with 
 
 ## Getting started
 
--Install DDEV and configure it in the folder of the project with <b>ddev config</b>
--Copy the .env.example and rename it into .env
--Start DDEV Webserver with ```<b>ddev start</b>```
--Install required Composer Packages with ```<b>ddev composer install</b>```
--Do the DB Migration and the Seeding with ```<b>ddev artisan migrate</b>``` & ```<b>ddev artisan db:seed</b>```
--Find out your link/IP for testing with ```<b>ddev describe</b>```
+- Install DDEV and configure it in the folder of the project with <b>ddev config</b>
+- Copy the .env.example and rename it into .env
+- Start DDEV Webserver with ```<b>ddev start</b>```
+- Install required Composer Packages with ```<b>ddev composer install</b>```
+- Do the DB Migration and the Seeding with ```<b>ddev artisan migrate</b>``` & ```<b>ddev artisan db:seed</b>```
+- Find out your link/IP for testing with ```<b>ddev describe</b>```
 
 ## Specifications of used Technologies
 <table>
