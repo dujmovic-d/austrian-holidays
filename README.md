@@ -55,7 +55,7 @@ This is a simple Project for learning how to create a CRUD Web Application with 
             ddev artisan migrate
         </td>
         <td>
-            Launches Migrataions
+            Launches Migrations
             You can use the reset command to undo migration
             You can use the refresh command to undo the migration and relaunch it
         </td>
