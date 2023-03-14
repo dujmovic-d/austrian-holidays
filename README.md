@@ -11,7 +11,15 @@ This is a simple Project for learning how to create a CRUD Web Application with 
 - Start DDEV Webserver with ```ddev start```
 - Install required Composer Packages with ```ddev composer install```
 - Do the DB Migration and the Seeding with ```ddev artisan migrate``` & ```ddev artisan db:seed```
+- Generate Application Key with ```ddev artisan key:generate```
 - Find out your link/IP for testing with ```ddev describe```
+
+## How to use Visual Studio Code for Development with DDEV in WSL
+
+- Install <b>WSL</b> Extension for Code
+- In Code, go to the Terminal and type ```wsl```
+- Navigate to the Folder of the Project
+- Type ```code .```, after that Code should open a new Connection to the Server in a new Window 
 
 ## Specifications of used Technologies
 <table>
